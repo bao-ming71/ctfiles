@@ -1,6 +1,6 @@
 # ctfiles
 dlinverse.ipynb项目基于滤波反投影(FBP)算法构建X光重建系统，通过搭建投影数据残差梯度分析网络（3层CNN架构，含3×3卷积核/32通道/ReLU激活），建立投影数据残差与图像残差的映射关系，实现自适应梯度下降优化。
-single.ipynb利用U-net对单像素X光变换进行重建， Conv2DTranspose + BatchNorm 可以提升边缘恢复能力，并加入Attention gate对来自编码器的跳跃连接特征进行了加权筛选，抑制冗余背景特征，进一步增强了目标区域特征表达和边缘感知能力。U-net模型架构如下所示。
+single.ipynb利用U-net对单像素X光变换进行重建，对称结构有较好的边缘恢复能力，并加入Attention gate对来自编码器的跳跃连接特征进行了加权筛选，抑制冗余背景特征，进一步增强了目标区域特征表达和边缘感知能力。U-net模型架构如下所示。
 # model
     def build_enhanced_unet(input_shape=(128, 128, 1)):
     inputs = layers.Input(shape=input_shape)
